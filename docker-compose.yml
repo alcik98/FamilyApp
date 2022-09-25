@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+    family-app:
+        container_name: family-app
+        image: alcik98/family-app
+        restart: always
+        ports:
+            - 8080:8080
+        environment:
+            DATABASE_HOST: mysqldb
+            MYSQL_PORT: 3306
+        depends_on:
+            - mysqldb
+        networks:
+            - backend
+
+    family-member-app:
+        container_name: family-member-app
+        image: alcik98/family-member-app
+        restart: always
+        ports:
+            - 8081:8081
+        environment:
+            DATABASE_HOST: mysqldb
+            MYSQL_PORT: 3306
+        depends_on:
+            - mysqldb
+        networks:
+            - backend
+            
+    mysqldb:
+        image: alcik98/family-mysql
+        container_name: family-mysql
+        restart: unless-stopped
+        ports:
+            - 3306:3306
+        networks:
+            - backend
+networks:
+    backend: {}
