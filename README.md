@@ -11,3 +11,5 @@ http://localhost:8080/families/ - Zwroca nam wszystkie dostepne rodziny (bez czl
 http://localhost:8080/families/getFamily/{id} - Zwraca rodzine o podanym id oraz jej członków.
 
 http://localhost:8081/familyMembers/createFamily - Tworzy rodzine wraz z podanymi członkami rodziny.
+
+![image](https://user-images.githubusercontent.com/4568346/192171549-9db7f6c6-6061-4168-8d87-77a60bbcb383.png)
